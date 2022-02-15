@@ -7,11 +7,13 @@
     <name>spring-open-telemetry-samples</name>
     <modules>
         <module>spring-boot-open-telemetry-demo</module>
+        <module>open-telemetry-api-demo</module>
     </modules>
     <properties>
         <open-telemetry.version>1.11.0-alpha</open-telemetry.version>
         <spring-boot-dependencies.version>2.2.2.RELEASE</spring-boot-dependencies.version>
         <mysql-connector-java.version>8.0.27</mysql-connector-java.version>
+        <transmittable-thread-local.version>2.12.4</transmittable-thread-local.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
@@ -38,7 +40,12 @@
                 <groupId>io.opentelemetry.instrumentation</groupId>
                 <artifactId>opentelemetry-instrumentation-api</artifactId>
                 <version>${open-telemetry.version}</version>
-                <scope>runtime</scope>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>transmittable-thread-local</artifactId>
+                <version>${transmittable-thread-local.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

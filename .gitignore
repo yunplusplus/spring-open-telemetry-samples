@@ -7,6 +7,7 @@ out/
 # Maven (proto)
 target
 
+
 # IntelliJ IDEA
 .idea
 *.iml
@@ -33,3 +34,5 @@ bin
 
 # Vim
 .swp
+
+logs

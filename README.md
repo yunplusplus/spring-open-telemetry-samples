@@ -98,3 +98,9 @@ verbose.
 ```shell
 -Dotel.javaagent.debug=true 
 ```
+
+TransmittableThreadLocal (TTL)
+
+```shell
+-Xbootclasspath/a:/Users/icefox/Documents/github/yunplusplus/spring-open-telemetry-samples/lib/transmittable-thread-local-2.12.4.jar
+```

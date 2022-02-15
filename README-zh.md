@@ -1,4 +1,4 @@
-## open-telemetry agent 配置 
+## open-telemetry agent 配置
 
 此代理是高度可配置的.
 
@@ -12,6 +12,7 @@ java -javaagent:path/to/opentelemetry-javaagent.jar \
 ```
 
 你也能用环境变量来配置agent：
+
 ```shell
 OTEL_SERVICE_NAME=your-service-name \
 OTEL_TRACES_EXPORTER=zipkin \
@@ -55,12 +56,10 @@ java -javaagent:/Users/icefox/Documents/OpenTelemetry/opentelemetry-javaagent-v.
 
 它将[Zipkin format](https://zipkin.io/zipkin-api/#/default/post_spans) 的JSON发送到指定的HTTP URL。
 
-
 | 系统属性               | 环境变量      |  描述                                                                                                                |
 |-------------------------------|-------------------------------|-----------------------------------------------------------------------------------------------------------------------|
 | otel.traces.exporter=zipkin   | OTEL_TRACES_EXPORTER=zipkin   | Select the Zipkin exporter                                                                                            |
 | otel.exporter.zipkin.endpoint | OTEL_EXPORTER_ZIPKIN_ENDPOINT | The Zipkin endpoint to connect to. Default is `http://localhost:9411/api/v2/spans`. Currently only HTTP is supported. |
-
 
 ```shell
 java -javaagent:/Users/icefox/Documents/OpenTelemetry/opentelemetry-javaagent-v.1.11.0.jar \
@@ -86,3 +85,11 @@ java -javaagent:/Users/icefox/Documents/OpenTelemetry/opentelemetry-javaagent-v.
 ```
 
 ![图片示例](./images/img.png)
+
+### 故障问题排查
+
+你向agent添加 -Dotel.javaagent.debug=true 参数来查看debug日志。请注意，这些内容非常冗长。
+
+```shell
+-Dotel.javaagent.debug=true 
+```

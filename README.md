@@ -4,7 +4,8 @@
 
 The agent is highly configurable.
 
-One option is to pass configuration properties via the D flag. In this example a service name and zipkin exporter for traces are configured:
+One option is to pass configuration properties via the D flag. In this example a service name and zipkin exporter for
+traces are configured:
 
 ```shell
 java -javaagent:path/to/opentelemetry-javaagent.jar \
@@ -12,6 +13,7 @@ java -javaagent:path/to/opentelemetry-javaagent.jar \
      -Dotel.traces.exporter=zipkin \
      -jar myapp.jar
 ```
+
 You can also use environment variables to configure the agent:
 
 ```shell
@@ -20,6 +22,7 @@ OTEL_TRACES_EXPORTER=zipkin \
 java -javaagent:path/to/opentelemetry-javaagent.jar \
      -jar myapp.jar
 ```
+
 You can also supply a Java properties file and load configuration values
 
 ```shell
@@ -56,12 +59,10 @@ java -javaagent:/Users/icefox/Documents/OpenTelemetry/opentelemetry-javaagent-v.
 
 The Zipkin exporter. It sends JSON in Zipkin format to a specified HTTP URL.
 
-
 | System property               | Environment variable          | Description                                                                                                           |
 |-------------------------------|-------------------------------|-----------------------------------------------------------------------------------------------------------------------|
 | otel.traces.exporter=zipkin   | OTEL_TRACES_EXPORTER=zipkin   | Select the Zipkin exporter                                                                                            |
 | otel.exporter.zipkin.endpoint | OTEL_EXPORTER_ZIPKIN_ENDPOINT | The Zipkin endpoint to connect to. Default is `http://localhost:9411/api/v2/spans`. Currently only HTTP is supported. |
-
 
 ```shell
 java -javaagent:/Users/icefox/Documents/OpenTelemetry/opentelemetry-javaagent-v.1.11.0.jar \
@@ -86,4 +87,14 @@ java -javaagent:/Users/icefox/Documents/OpenTelemetry/opentelemetry-javaagent-v.
      -Dotel.javaagent.configuration-file=/Users/icefox/Documents/icefox/spring-open-telemetry/config/agent-logging.properties \
      -jar myapp.jar
 ```
+
 ![iamge-example](./images/img.png)
+
+### Troubleshooting
+
+You can pass the -Dotel.javaagent.debug=true parameter to the agent to see debug logs. Note that these are quite
+verbose.
+
+```shell
+-Dotel.javaagent.debug=true 
+```

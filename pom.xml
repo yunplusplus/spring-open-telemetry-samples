@@ -11,6 +11,7 @@
     <properties>
         <open-telemetry.version>1.11.0-alpha</open-telemetry.version>
         <spring-boot-dependencies.version>2.2.2.RELEASE</spring-boot-dependencies.version>
+        <mysql-connector-java.version>8.0.27</mysql-connector-java.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
@@ -27,6 +28,11 @@
                 <groupId>com.github.yunplusplus</groupId>
                 <artifactId>spring-boot-open-telemetry-demo</artifactId>
                 <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector-java.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.opentelemetry.instrumentation</groupId>

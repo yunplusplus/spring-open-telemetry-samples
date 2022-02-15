@@ -1,10 +1,8 @@
-## open-telemetry agent 配置
+## open-telemetry agent 配置 
 
-[中文文档](./README-zh.md)
+此代理是高度可配置的.
 
-The agent is highly configurable.
-
-One option is to pass configuration properties via the D flag. In this example a service name and zipkin exporter for traces are configured:
+一个选择是通过-D标志传递配置属性,在这个例子中展示如何让配置服务名称和zipkin exporter:
 
 ```shell
 java -javaagent:path/to/opentelemetry-javaagent.jar \
@@ -12,15 +10,16 @@ java -javaagent:path/to/opentelemetry-javaagent.jar \
      -Dotel.traces.exporter=zipkin \
      -jar myapp.jar
 ```
-You can also use environment variables to configure the agent:
 
+你也能用环境变量来配置agent：
 ```shell
 OTEL_SERVICE_NAME=your-service-name \
 OTEL_TRACES_EXPORTER=zipkin \
 java -javaagent:path/to/opentelemetry-javaagent.jar \
      -jar myapp.jar
-```
-You can also supply a Java properties file and load configuration values
+``` 
+
+你也能提供一个Java properties文件,加载配置属性值：
 
 ```shell
 java -javaagent:path/to/opentelemetry-javaagent.jar \
@@ -38,11 +37,11 @@ java -javaagent:path/to/opentelemetry-javaagent.jar \
 
 ### Jeager exporter
 
-The Jaeger exporter. This exporter uses gRPC for its communications protocol.
+Jaeger exporter通过grpc协议来交互。
 
-| System property                   | Environment variable              | Description                                                                                        |
+| 系统属性                   | 环境变量             | 描述                                                                                        |
 |-----------------------------------|-----------------------------------|----------------------------------------------------------------------------------------------------|
-| otel.traces.exporter=jaeger       | OTEL_TRACES_EXPORTER=jaeger       | Select the Jaeger exporter                                                                         |
+| otel.traces.exporter=jaeger       | OTEL_TRACES_EXPORTER=jaeger       | 选择 Jaeger exporter                                                                         |
 | otel.exporter.jaeger.endpoint     | OTEL_EXPORTER_JAEGER_ENDPOINT     | The Jaeger gRPC endpoint to connect to. Default is `http://localhost:14250`.                       |
 | otel.exporter.jaeger.timeout      | OTEL_EXPORTER_JAEGER_TIMEOUT      | The maximum waiting time, in milliseconds, allowed to send each batch. Default is `10000`.         |
 
@@ -54,10 +53,10 @@ java -javaagent:/Users/icefox/Documents/OpenTelemetry/opentelemetry-javaagent-v.
 
 ### Zipkin exporter
 
-The Zipkin exporter. It sends JSON in Zipkin format to a specified HTTP URL.
+它将[Zipkin format](https://zipkin.io/zipkin-api/#/default/post_spans) 的JSON发送到指定的HTTP URL。
 
 
-| System property               | Environment variable          | Description                                                                                                           |
+| 系统属性               | 环境变量      |  描述                                                                                                                |
 |-------------------------------|-------------------------------|-----------------------------------------------------------------------------------------------------------------------|
 | otel.traces.exporter=zipkin   | OTEL_TRACES_EXPORTER=zipkin   | Select the Zipkin exporter                                                                                            |
 | otel.exporter.zipkin.endpoint | OTEL_EXPORTER_ZIPKIN_ENDPOINT | The Zipkin endpoint to connect to. Default is `http://localhost:9411/api/v2/spans`. Currently only HTTP is supported. |
@@ -71,10 +70,9 @@ java -javaagent:/Users/icefox/Documents/OpenTelemetry/opentelemetry-javaagent-v.
 
 ### Logging exporter
 
-The logging exporter prints the name of the span along with its attributes to stdout. It's mainly used for testing and
-debugging.
+logging exporter打印span及其属性到stdout,它主要用于测试和调试。
 
-| System property               | Environment variable          | Description                                                          |
+| 系统属性                  | 环境变量           | 描述                                                            |
 |-------------------------------|-------------------------------|----------------------------------------------------------------------|
 | otel.traces.exporter=logging  | OTEL_TRACES_EXPORTER=logging  | Select the logging exporter for tracing                              |
 | otel.metrics.exporter=logging | OTEL_METRICS_EXPORTER=logging | Select the logging exporter for metrics                              |
@@ -86,4 +84,5 @@ java -javaagent:/Users/icefox/Documents/OpenTelemetry/opentelemetry-javaagent-v.
      -Dotel.javaagent.configuration-file=/Users/icefox/Documents/icefox/spring-open-telemetry/config/agent-logging.properties \
      -jar myapp.jar
 ```
-![iamge-example](./images/img.png)
+
+![图片示例](./images/img.png)

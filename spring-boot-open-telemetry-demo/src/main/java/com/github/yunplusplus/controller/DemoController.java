@@ -1,9 +1,5 @@
 package com.github.yunplusplus.controller;
 
-//import com.alibaba.ttl.TransmittableThreadLocal;
-//import com.alibaba.ttl.TtlRunnable;
-//import com.alibaba.ttl.threadpool.TtlExecutors;
-
 import com.github.yunplusplus.model.Address;
 import com.github.yunplusplus.model.User;
 import org.slf4j.Logger;
@@ -26,7 +22,7 @@ public class DemoController {
     @Autowired
     private RestTemplate restTemplate;
 
-    private ExecutorService executorService = Executors.newSingleThreadExecutor();
+    private ExecutorService executorService = Executors.newFixedThreadPool(10);
 
     @RequestMapping("/getAddress")
     public Address getAddress(@RequestParam("addr") String addr) {

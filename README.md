@@ -57,7 +57,8 @@ java -javaagent:/Users/icefox/Documents/OpenTelemetry/opentelemetry-javaagent-v.
 
 ### Zipkin exporter
 
-The Zipkin exporter. It sends JSON in Zipkin format to a specified HTTP URL.
+The Zipkin exporter. It sends JSON in [Zipkin format](https://zipkin.io/zipkin-api/#/default/post_spans) to a specified
+HTTP URL.
 
 | System property               | Environment variable          | Description                                                                                                           |
 |-------------------------------|-------------------------------|-----------------------------------------------------------------------------------------------------------------------|
@@ -104,3 +105,9 @@ TransmittableThreadLocal (TTL)
 ```shell
 -Xbootclasspath/a:/Users/icefox/Documents/github/yunplusplus/spring-open-telemetry-samples/lib/transmittable-thread-local-2.12.4.jar
 ```
+
+### propagation
+
+zikpin  [b3-propagation](https://github.com/openzipkin/b3-propagation) \
+jaeger  [propagation-format](https://www.jaegertracing.io/docs/1.31/client-libraries/#propagation-format) \
+w3c     [trace-context](https://github.com/w3c/trace-context)

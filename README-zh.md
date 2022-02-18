@@ -99,3 +99,8 @@ TransmittableThreadLocal (TTL)
 ```shell
 -Xbootclasspath/a:/Users/icefox/Documents/github/yunplusplus/spring-open-telemetry-samples/lib/transmittable-thread-local-2.12.4.jar
 ```
+### 传播格式
+
+zikpin  [b3-propagation](https://github.com/openzipkin/b3-propagation) \
+jaeger  [propagation-format](https://www.jaegertracing.io/docs/1.31/client-libraries/#propagation-format) \
+w3c     [trace-context](https://github.com/w3c/trace-context)

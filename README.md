@@ -110,4 +110,4 @@ TransmittableThreadLocal (TTL)
 
 zikpin  [b3-propagation](https://github.com/openzipkin/b3-propagation) \
 jaeger  [propagation-format](https://www.jaegertracing.io/docs/1.31/client-libraries/#propagation-format) \
-w3c     [trace-context](https://github.com/w3c/trace-context)
+w3c     [trace-context](https://github.com/w3c/trace-context) (https://w3c.github.io/trace-context/)
